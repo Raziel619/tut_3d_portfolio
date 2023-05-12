@@ -12,7 +12,7 @@ const ProjectCard = ({
   name,
   description,
   image,
-  tag,
+  tags,
   source_code_link,
 }) => {
   return (
@@ -45,7 +45,14 @@ const ProjectCard = ({
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
-        div.mt-4.flex.flex-wrap
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+              #{tag.name}
+            </p>
+          ))}
+        </div>
       </Tilt>
     </motion.div>
   );
